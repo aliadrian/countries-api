@@ -575,14 +575,6 @@ html {
   grid-column-end: 3;
 }
 
-.row-start-1 {
-  grid-row-start: 1;
-}
-
-.row-end-\[-1\] {
-  grid-row-end: -1;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -667,6 +659,10 @@ html {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -731,6 +727,10 @@ html {
 .rounded-t-lg {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-r-8 {
@@ -842,6 +842,14 @@ html {
   padding-top: 2rem;
 }
 
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -922,11 +930,6 @@ html {
 @media (min-width: 1280px) {
   .custom-grid {
     grid-template-columns: 500px 500px 1fr;
-  }
-
-  .country-about-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 200px);
   }
 }
 

@@ -50,22 +50,11 @@ const CountryAbout = ({ countries }) => {
   let totalPopulation = population?.toLocaleString("en");
   const flags = country.flags;
   const flagPicture = Object.values(flags)[1];
-  console.log(flagPicture);
   const flagAlt = Object.values(flags)[2];
   const currencyCode = Object.keys(country.currencies)[0];
   const currencyDetails = country.currencies[currencyCode];
   const languageArray = Object.values(languages);
   const nativeNameValues = Object.values(name.nativeName)
-
-  const calculateRows = () => {
-    if (neighboringCountries.length >= 14) {
-      return 'grid-rows-4';
-    } else if (neighboringCountries.length > 5) {
-      return 'grid-rows-3';
-    } else {
-      return 'grid-rows-1';
-    }
-  };
 
   return (
     <div className="max-w-screen-2xl min-h-[100dvh]">
@@ -91,16 +80,19 @@ const CountryAbout = ({ countries }) => {
           <p className='text-sm xl:text-md font-semibold'>Languages: <span className='font-normal'>{languageArray?.sort().join(', ')}</span></p>
         </div>
         <div className="xl:grid dark:text-white xl:col-start-2 xl:col-end-4 xl:pl-20 pb-16 xl:pb-8 xl:self-end">
-          {neighboringCountries.length > 0 && (
-            <div className="country-about-grid">
-              <ul className={`grid xl:grid-flow-col gap-4 col-start-1 col-end-3 items-baseline ${calculateRows()}`}>
-                <p className='text-md font-semibold whitespace-nowrap row-start-1 row-end-[-1] self-center pr-4'>Border Countries:</p>
-                {neighboringCountries.map((neighbor, index) => (
-                  <Link to={`/country/${neighbor}`} key={index} onClick={() => handleNeighboringCountryClick(neighbor)} className="outline outline-1 outline-lightGray dark:outline-none py-1 dark:text-white dark:bg-darkElement px-3 text-center whitespace-nowrap shadow-sm shadow-darkGray dark:shadow-darkBg rounded" >
-                    {neighbor}
-                  </Link>
-                ))}
-              </ul>
+          {neighboringCountries.length > 0 ? (
+            <ul className="flex flex-wrap gap-4">
+              <p className='text-md font-semibold whitespace-nowrap self-center'>Border Countries:</p>
+              {neighboringCountries.map((neighbor, index) => (
+                <Link to={`/country/${neighbor}`} key={index} onClick={() => handleNeighboringCountryClick(neighbor)} className="outline outline-1 outline-lightGray dark:outline-none py-1 dark:text-white dark:bg-darkElement px-3 text-center whitespace-nowrap shadow-sm shadow-darkGray dark:shadow-darkBg rounded" >
+                  {neighbor}
+                </Link>
+              ))}
+            </ul>
+          ) : (
+            <div>
+              <span className='text-sm xl:text-md font-semibold whitespace-nowrap self-center'>Border Countries:</span>
+              <span className="text-sm xl:text-md font-normal pl-2">No border countries</span>
             </div>
           )}
         </div>
