@@ -22,7 +22,7 @@
 
 <div align="center">
 
-![](./assets/images/desktop-preview.jpg)
+![](src/assets/images/desktop-preview.jpg)
 
 </div>
 
@@ -59,7 +59,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./assets/images/screenshot.png)
+![](src/assets/images/screenshot.PNG)
 
 ## My process
 
