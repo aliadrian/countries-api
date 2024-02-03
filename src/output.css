@@ -629,8 +629,8 @@ html {
   width: 66.666667%;
 }
 
-.w-\[335px\] {
-  width: 335px;
+.w-\[256px\] {
+  width: 256px;
 }
 
 .w-\[500px\] {
@@ -639,10 +639,6 @@ html {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[256px\] {
-  width: 256px;
 }
 
 .max-w-fit {
@@ -1070,6 +1066,10 @@ html {
     width: 20%;
   }
 
+  .lg\:w-\[10\%\] {
+    width: 10%;
+  }
+
   .lg\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -1099,10 +1099,6 @@ html {
 
   .xl\:grid {
     display: grid;
-  }
-
-  .xl\:h-\[340px\] {
-    height: 340px;
   }
 
   .xl\:w-11\/12 {

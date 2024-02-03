@@ -49,7 +49,8 @@ const CountryAbout = ({ countries }) => {
 
   let totalPopulation = population?.toLocaleString("en");
   const flags = country.flags;
-  const flagPicture = Object.values(flags)[0];
+  const flagPicture = Object.values(flags)[1];
+  console.log(flagPicture);
   const flagAlt = Object.values(flags)[2];
   const currencyCode = Object.keys(country.currencies)[0];
   const currencyDetails = country.currencies[currencyCode];
@@ -68,7 +69,7 @@ const CountryAbout = ({ countries }) => {
 
   return (
     <div className="max-w-screen-2xl min-h-[100dvh]">
-      <button onClick={() => navigate("/")} className="my-8 shadow-lg py-2 w-2/5 md:w-[15%] lg:w-[20%] dark:text-white dark:bg-darkElement flex items-center px-6 gap-3 justify-center rounded">
+      <button onClick={() => navigate("/")} className="my-8 shadow-lg py-2 w-2/5 md:w-[15%] lg:w-[10%] dark:text-white dark:bg-darkElement flex items-center px-6 gap-3 justify-center rounded">
         <FontAwesomeIcon icon={faArrowLeft} className="text-gray-500" />
         <span>Back</span>
       </button>

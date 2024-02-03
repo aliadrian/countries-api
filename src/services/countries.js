@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = 'https://studies.cs.helsinki.fi/restcountries/api/all';
+const baseUrl = 'https://restcountries.com/v3.1/all';
 
 const getAll = async () => {
   try {
