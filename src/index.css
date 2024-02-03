@@ -24,30 +24,14 @@
   }
 }
 
-/* .grid-container {
-  grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
-  row-gap: 4rem;
-  justify-content: center;
-} */
-
 .custom-grid-row {
   grid-row: 1 / 5;
 }
-
-/* @media (min-width: 1097px) {
-  .grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-} */
 
 @media (min-width: 1280px) {
   .custom-grid {
     grid-template-columns: 500px 500px 1fr;
   }
-
-  /* .xl\:grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  } */
 
   .country-about-grid {
     display: grid;
