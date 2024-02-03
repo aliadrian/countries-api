@@ -450,7 +450,8 @@ video {
 html {
   max-width: 100%;
   overflow-x: hidden;
-  font-family: "Inter", sans-serif;
+  font-family: system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      Segoe UI Symbol, "Noto Color Emoji";
   background-color: var(--background-color);
 }
 
@@ -638,6 +639,10 @@ html {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[256px\] {
+  width: 256px;
 }
 
 .max-w-fit {
@@ -914,9 +919,8 @@ html {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-/* 
-.grid-container {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+/* .grid-container {
+  grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
   row-gap: 4rem;
   justify-content: center;
 } */

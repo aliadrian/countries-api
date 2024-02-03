@@ -14,7 +14,7 @@ const Country = ({ country }) => {
       </div>
       <div className='rounded shadow-lg hover:cursor-pointer'>
         <div className=''>
-          <img className='w-[335px] h-[180px] object-fill rounded-t-lg flag' src={flagPicture} alt={flagAlt} />
+          <img className='w-[256px] h-[180px] object-fill rounded-t-lg flag' src={flagPicture} alt={flagAlt} />
         </div>
         <div className='text-left px-6 pt-6 pb-10 dark:text-white dark:bg-darkElement rounded-b-lg'>
           <h1 className='font-bold text-lg pb-4 pt-3'>{name.common.length > 19 ? `${name.common.substring(0, 19)}...` : name.common}</h1>

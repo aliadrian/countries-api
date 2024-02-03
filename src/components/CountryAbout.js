@@ -74,7 +74,7 @@ const CountryAbout = ({ countries }) => {
       </button>
       <div className='xl:grid custom-grid pt-8 xl:gap-2 gap-12 items-center'>
         <div className='xl:justify-start grid custom-grid-row justify-center'>
-          <img className='w-[500px]  xl:h-[340px] object-contain xl:object-fill flag' src={flagPicture} alt={flagAlt} />
+          <img className='w-[500px] object-contain xl:object-fill flag' src={flagPicture} alt={flagAlt} />
         </div>
         <div className='grid dark:text-white xl:pl-20 xl:row-start-1 xl:row-end-4 xl:self-center'>
           <h1 className='font-bold text-xl xl:text-3xl pt-8 xl:pt-0 pb-8'>{name?.common}</h1>
