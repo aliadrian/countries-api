@@ -11,54 +11,43 @@ import Dropdown from "./components/Dropdown";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import CountryAbout from "./components/CountryAbout";
 
+const getSystemColorScheme = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
 const App = () => {
   const [countries, setCountries] = useState([])
   const [showFilter, setshowFilter] = useState('');
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState('');
-  const [theme, setTheme] = useState("dark");
   const [filterValue, setFilterValue] = useState('');
-  const [randomCountries, setRandomCountries] = useState([]);
+  const storedTheme = localStorage.getItem('theme');
+  const defaultTheme = storedTheme || getSystemColorScheme();
+
+  const [theme, setTheme] = useState(defaultTheme);
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    localStorage.setItem('theme', newTheme);
+  }
+
+  // useEffect to set the initial theme based on system or localStorage
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
 
   useEffect(() => {
     countriesService
       .getAll()
       .then(initialCountries => {
-        setCountries(initialCountries)
+        // Filter out countries with region "Antarctica"
+        const filteredCountries = initialCountries.filter(country => country.region.toLowerCase() !== 'antarctic');
+        setCountries(filteredCountries);
       })
       .catch(error => {
         console.error('Error fetching countries:', error);
-      })
-  }, [])
-
-  useEffect(() => {
-    if (randomCountries.length === 0 && countries.length > 0) {
-      setRandomCountries(getRandomCountries(8));
-    }
-  }, [randomCountries, countries]); // eslint-disable-line
-
-  const getRandomCountries = (count) => {
-    const shuffledCountries = [...countries.sort(() => 0.5 - Math.random())]
-    return shuffledCountries.slice(0, count);
-  }
-
-  useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
+      });
   }, []);
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      document.body.classList.add("darkBg");
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.body.classList.remove("darkBg");
-    }
-  }, [theme]);
 
   const handleCountryNameChange = (e) => {
     const nameFilter = e.target.value.toLowerCase();
@@ -76,20 +65,15 @@ const App = () => {
         ? countries.filter(country =>
           country.name.common.toLowerCase().includes(showFilter.toLowerCase())
         )
-        : randomCountries;
+        : countries;
 
       return selectedRegion
         ? filteredCountries.filter(country => country.region === selectedRegion)
         : filteredCountries;
     } else {
-      return randomCountries;
+      return countries;
     }
   };
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    setTheme(isDarkMode ? "light" : "dark");
-  }
 
   return (
     <Router>
@@ -98,8 +82,8 @@ const App = () => {
           <div className="max-w-screen-2xl mx-auto py-6 items-center">
             <div className="flex justify-between  dark:text-white sm:px-20 px-10">
               <Link to="/" className="md:text-2xl text-lg font-bold">Where in the world?</Link>
-              <button className="flex items-center gap-2 md:gap-4" onClick={toggleDarkMode}>
-                <FontAwesomeIcon icon={isDarkMode ? fasFaMoon : farFaMoon} style={{ color: isDarkMode ? "#ffffff" : "#000000" }} />
+              <button className="flex items-center gap-2 md:gap-4" onClick={switchTheme}>
+                <FontAwesomeIcon icon={theme === 'dark' ? fasFaMoon : farFaMoon} />
                 <p className="md:text-xl">Dark Mode</p>
               </button>
             </div>
@@ -116,21 +100,21 @@ const App = () => {
                       <Filter handleCountryNameChange={handleCountryNameChange} filterValue={filterValue} />
                     </div>
                     <div>
-                      <Dropdown selectedRegion={selectedRegion} handleRegionChange={handleRegionChange} randomCountries={randomCountries} />
+                      <Dropdown selectedRegion={selectedRegion} handleRegionChange={handleRegionChange} countries={countries} />
                     </div>
                   </div>
                   <div className="xs:grid py-6">
                     {filterCountries().length > 0 ? (
-                      <CountryList filterCountries={filterCountries()} selectedRegion={selectedRegion} randomCountries={randomCountries} />
+                      <CountryList filterCountries={filterCountries()} selectedRegion={selectedRegion} countries={countries} />
                     ) : (
 
-                      <CountryList filterCountries={countries} randomCountries={randomCountries} />
+                      <CountryList filterCountries={countries} countries={countries} />
                     )}
                   </div>
                 </div>
               )}
             />
-            <Route path="/country/:name" element={<CountryAbout />} />
+            <Route path="/country/:name" element={<CountryAbout countries={countries} />} />
           </Routes>
         </div>
       </div>

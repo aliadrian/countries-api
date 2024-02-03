@@ -3,12 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+  @media (prefers-color-scheme: dark) {
+    html {
+      background-color: hsl(207, 26%, 17%);
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    html {
+      background-color: hsl(0, 0%, 100%);
+    }
+  }
+
   html {
     max-width: 100%;
     overflow-x: hidden;
     font-family: "Inter", sans-serif;
+    background-color: var(--background-color);
   }
 }
+
 /* 
 .grid-container {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

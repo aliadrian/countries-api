@@ -435,10 +435,23 @@ video {
   display: none;
 }
 
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: hsl(207, 26%, 17%);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background-color: hsl(0, 0%, 100%);
+  }
+}
+
 html {
   max-width: 100%;
   overflow-x: hidden;
   font-family: "Inter", sans-serif;
+  background-color: var(--background-color);
 }
 
 *, ::before, ::after {
@@ -956,6 +969,10 @@ html {
   .grid-container {
     grid-template-columns: 1fr;
   }
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 :is(.dark .dark\:border-darkElement) {

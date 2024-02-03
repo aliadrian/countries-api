@@ -1,14 +1,24 @@
 import axios from "axios";
-const baseUrl = 'https://studies.cs.helsinki.fi/restcountries/api/all'
+
+const baseUrl = 'https://studies.cs.helsinki.fi/restcountries/api/all';
 
 const getAll = async () => {
-  const request = axios.get(baseUrl);
-  const response = await request
-  return response.data
-}
+  try {
+    const request = await axios.get(baseUrl);
+    const countries = request.data;
 
-const ecportedObject = {
+    // Filter out countries with region "Antarctica"
+    const filteredCountries = countries.filter(country => country.region.toLowerCase() !== 'antarctica');
+
+    return filteredCountries;
+  } catch (error) {
+    console.error("Error fetching countries:", error.message);
+    throw error;
+  }
+};
+
+const exportedObject = {
   getAll,
-}
+};
 
-export default ecportedObject
+export default exportedObject;

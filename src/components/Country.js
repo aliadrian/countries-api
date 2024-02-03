@@ -12,7 +12,7 @@ const Country = ({ country }) => {
     <div className='max-w-fit mx-auto'>
       <div className='flex items-center justify-between w-320px w-full'>
       </div>
-      <div className='rounded shadow-lg'>
+      <div className='rounded shadow-lg hover:cursor-pointer'>
         <div className=''>
           <img className='w-[335px] h-[180px] object-fill rounded-t-lg flag' src={flagPicture} alt={flagAlt} />
         </div>
