@@ -6,7 +6,11 @@ const Country = ({ country }) => {
   let totalPopulation = population.toLocaleString("en");
   const flags = country.flags;
   const flagPicture = Object.values(flags)[0];
-  const flagAlt = Object?.values(flags)[2];
+  const flagAlt = Object.values(flags)[2];
+  const alt = flagAlt && flagAlt.length !== undefined && flagAlt.length <= 0
+    ? `Flag of ${name.common}`
+    : flagAlt || `Flag of ${name.common}`;
+  console.log(flagAlt && flagAlt.length <= 0 ? `Flag of ${name.common}` : flagAlt)
 
   return (
     <div className='max-w-fit mx-auto'>
@@ -14,7 +18,7 @@ const Country = ({ country }) => {
       </div>
       <div className='rounded shadow-lg hover:cursor-pointer'>
         <div className=''>
-          <img className='w-[256px] h-[180px] object-fill rounded-t-lg flag' src={flagPicture} alt={flagAlt && flagAlt.length <= 0 ? `Flag of ${name.common}` : flagAlt} />
+          <img className='w-[256px] h-[180px] object-fill rounded-t-lg' src={flagPicture} alt={alt} />
         </div>
         <div className='text-left px-6 pt-6 pb-10 dark:text-white dark:bg-darkElement rounded-b-lg'>
           <h1 className='font-bold text-lg pb-4 pt-3'>{name.common.length > 19 ? `${name.common.substring(0, 19)}...` : name.common}</h1>
