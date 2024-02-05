@@ -30,7 +30,7 @@ This is a solution to the [REST Countries API with color theme switcher](https:/
 
 <h2>Links</h2>
 
-- Solution URL: [REST Countries API with color theme switcher | Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) 
+- Solution URL: [REST Countries API with color theme switcher | Frontend Mentor](https://www.frontendmentor.io/solutions/countries-api-using-react-BtDH65PMgM) 
 - Live Site URL: https://countries-api-by-adrian.vercel.app/
 
 <br>
