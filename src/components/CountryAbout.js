@@ -57,7 +57,7 @@ const CountryAbout = ({ countries }) => {
   const nativeNameValues = Object.values(name.nativeName)
 
   return (
-    <div className="max-w-screen-2xl min-h-[100dvh]">
+    <div className="max-w-screen-2xl">
       <button onClick={() => navigate("/")} className="my-8 shadow-lg py-2 w-2/5 md:w-[15%] lg:w-[10%] dark:text-white dark:bg-darkElement flex items-center px-6 gap-3 justify-center rounded">
         <FontAwesomeIcon icon={faArrowLeft} className="text-gray-500" />
         <span>Back</span>
