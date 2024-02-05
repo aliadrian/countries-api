@@ -19,14 +19,14 @@ const CountryList = ({ filterCountries, selectedRegion }) => {
   return (
     <div className='grid grid-container items-baseline gap-16 dark:bg-darkBg bg-white'>
       {countriesToRender.map((country, index) => (
-        <button key={index} onClick={() => navigateToCountryAbout(country)}>
+        <a href="/#" key={index} onClick={() => navigateToCountryAbout(country)}>
           <Country
             key={index}
             country={country}
             showDetails={showDetails}
             onToggleDetails={handleToggleDetails}
           />
-        </button>
+        </a>
       ))}
     </div>
   )

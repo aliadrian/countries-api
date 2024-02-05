@@ -625,8 +625,8 @@ html {
   width: 66.666667%;
 }
 
-.w-\[256px\] {
-  width: 256px;
+.w-\[300px\] {
+  width: 300px;
 }
 
 .w-\[500px\] {
@@ -635,12 +635,6 @@ html {
 
 .w-full {
   width: 100%;
-}
-
-.max-w-fit {
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
 }
 
 .max-w-screen-2xl {
@@ -743,8 +737,8 @@ html {
   object-fit: contain;
 }
 
-.object-fill {
-  object-fit: fill;
+.object-cover {
+  object-fit: cover;
 }
 
 .px-10 {
@@ -940,10 +934,6 @@ html {
   .grid-container {
     grid-template-columns: 1fr;
   }
-}
-
-.hover\:cursor-pointer:hover {
-  cursor: pointer;
 }
 
 :is(.dark .dark\:border-darkElement) {
