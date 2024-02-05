@@ -19,7 +19,8 @@ const CountryList = ({ filterCountries, selectedRegion }) => {
   return (
     <div className='grid grid-container items-baseline gap-16 dark:bg-darkBg bg-white'>
       {countriesToRender.map((country, index) => (
-        <a href="/#" key={index} onClick={() => navigateToCountryAbout(country)}>
+        // eslint-disable-next-line
+        <a key={index} onClick={() => navigateToCountryAbout(country)}>
           <Country
             key={index}
             country={country}

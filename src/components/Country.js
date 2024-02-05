@@ -11,13 +11,11 @@ const Country = ({ country }) => {
     ? `Flag of ${name.common}`
     : flagAlt || `Flag of ${name.common}`;
 
-  console.log(flagPicture);
-
   return (
     <div className='mx-auto'>
       <div className='flex items-center justify-between w-320px w-full'>
       </div>
-      <div className='rounded shadow-lg'>
+      <div className='rounded shadow-lg cursor-pointer'>
         <div className=''>
           <img className='w-full h-[180px] object-cover rounded-t-lg' src={flagPicture} alt={alt} />
         </div>

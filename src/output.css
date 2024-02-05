@@ -625,10 +625,6 @@ html {
   width: 66.666667%;
 }
 
-.w-\[300px\] {
-  width: 300px;
-}
-
 .w-\[500px\] {
   width: 500px;
 }
@@ -639,6 +635,10 @@ html {
 
 .max-w-screen-2xl {
   max-width: 1536px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-col {
