@@ -10,7 +10,6 @@ const Country = ({ country }) => {
   const alt = flagAlt && flagAlt.length !== undefined && flagAlt.length <= 0
     ? `Flag of ${name.common}`
     : flagAlt || `Flag of ${name.common}`;
-  console.log(flagAlt && flagAlt.length <= 0 ? `Flag of ${name.common}` : flagAlt)
 
   return (
     <div className='max-w-fit mx-auto'>
