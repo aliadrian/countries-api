@@ -84,7 +84,7 @@ const App = () => {
               <Link to="/" className="md:text-2xl text-lg font-bold">Where in the world?</Link>
               <button className="flex items-center gap-2 md:gap-4" onClick={switchTheme}>
                 <FontAwesomeIcon icon={theme === 'dark' ? fasFaMoon : farFaMoon} />
-                <p className="md:text-xl">Dark Mode</p>
+                <span className="md:text-xl">Dark Mode</span>
               </button>
             </div>
           </div>
