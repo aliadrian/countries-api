@@ -5,7 +5,7 @@ export const Dropdown = ({ selectedRegion, handleRegionChange, countries }) => {
 
   return (
     <div className='relative'>
-      <label htmlFor="regionFilter" className='sr-only'>
+      <label htmlFor="regionFilter">
         <select
           id='regionFilter'
           className='md:w-full w-8/12 lg:px-12 shadow-lg py-6 md:px-6 px-4 border-r-8 border-white dark:border-darkElement dark:bg-darkElement dark:text-white'

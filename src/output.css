@@ -609,10 +609,6 @@ html {
   height: 180px;
 }
 
-.min-h-\[100dvh\] {
-  min-height: 100dvh;
-}
-
 .min-h-\[87\.5vh\] {
   min-height: 87.5vh;
 }
