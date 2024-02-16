@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Country from "./Country";
 import { useNavigate } from 'react-router-dom';
+import ScrollToTop from "./ScrollToTop";
 
 const CountryList = ({ filterCountries, selectedRegion }) => {
   const [showDetails, setShowDetails] = useState(null)
@@ -29,6 +30,7 @@ const CountryList = ({ filterCountries, selectedRegion }) => {
           />
         </a>
       ))}
+      <ScrollToTop />
     </div>
   )
 }
