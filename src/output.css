@@ -889,12 +889,6 @@ html {
   grid-row: 1 / 5;
 }
 
-@media (min-width: 1280px) {
-  .custom-grid {
-    grid-template-columns: 500px 500px 1fr;
-  }
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -917,6 +911,10 @@ html {
 @media screen and (min-width: 1280px) {
   .grid-container {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .custom-grid {
+    grid-template-columns: 500px 500px 1fr;
   }
 }
 
