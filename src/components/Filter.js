@@ -14,7 +14,7 @@ const Filter = ({ handleCountryNameChange, filterValue }) => {
       <div className="relative">
         <input
           value={filterValue}
-          className="xl:w-11/12 w-full pl-20 md:pr-36 md:pl-24 lg:pr-72 shadow-lg py-6 dark:bg-darkElement"
+          className="w-full pl-20 md:pr-36 md:pl-24 shadow-lg py-6 dark:bg-darkElement"
           placeholder={placeholderText}
           onChange={handleCountryNameChange}
           onClick={handleInputClick}
