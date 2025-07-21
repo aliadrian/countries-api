@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const baseUrl = 'https://restcountries.com/v3.1/all';
+const baseUrl =
+  "https://restcountries.com/v3.1/all?fields=name,capital,region,flags,population,languages,currencies,tld,borders,cca3";
 
 const getAll = async () => {
   try {
@@ -8,7 +9,9 @@ const getAll = async () => {
     const countries = request.data;
 
     // Filter out countries with region "Antarctica"
-    const filteredCountries = countries.filter(country => country.region.toLowerCase() !== 'antarctica');
+    const filteredCountries = countries.filter(
+      (country) => country.region?.toLowerCase() !== "antarctica"
+    );
 
     return filteredCountries;
   } catch (error) {
