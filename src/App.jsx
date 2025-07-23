@@ -3,7 +3,6 @@ import Filter from "./components/Filter";
 import "./index.css";
 import countriesService from "./services/countries";
 import CountryList from "./components/CountryList";
-import "./output.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon as fasFaMoon } from "@fortawesome/free-solid-svg-icons";
 import { faMoon as farFaMoon } from "@fortawesome/free-regular-svg-icons";
@@ -106,7 +105,7 @@ const App = () => {
           </div>
         </nav>
 
-        <div className="max-w-screen-2xl mx-auto mt-10 min-h-[87.5vh] dark:bg-darkBg sm:px-20 px-10">
+        <div className="max-w-screen-2xl mx-auto mt-10 min-h-[100vh] dark:bg-darkBg sm:px-20 px-10">
           <Routes>
             <Route
               path="/"

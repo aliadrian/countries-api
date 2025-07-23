@@ -1,12 +1,12 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Filter = ({ handleCountryNameChange, filterValue }) => {
-  const placeholderText = 'Search for a country...';
+  const placeholderText = "Search for a country...";
 
   const handleInputClick = () => {
-    handleCountryNameChange({ target: { value: '' } });
+    handleCountryNameChange({ target: { value: "" } });
   };
 
   return (
